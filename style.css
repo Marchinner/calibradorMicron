@@ -1,6 +1,23 @@
+html {
+    background-image: url(capa.jpg);
+    background-position: center;
+}
+
 body {
     text-align: center;
     font-family: sans-serif;
+}
+.divlogos {
+    display: inline-block;
+}
+
+.geral {
+    background-color: white;
+    margin-left: 22rem;
+    margin-right: 22rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    margin-top: 6rem;
 }
 
 .divSelecao {
