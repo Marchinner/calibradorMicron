@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script type="text/javascript" src="script.js"></script> -->
+    <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Calibrador Micron</title>
 </head>
@@ -13,26 +13,27 @@
         <h1>Calibrador Micron</h1>
     </header>
 
-    <div id="divSelecao">
+    <div class="divSelecao">
         Quantidade de litros que o cliente irá utilizar: 
         <input type="number" id="litrosCliente" placeholder="litros">
         <br>
-        <input type="radio" name="radioUnidadeMedida" value="alquere">por Alquere
-        <input type="radio" name="radioUnidadeMedida" value="hectare">por Hectare
+        <input type="radio" id="radioAlquere" name="radioUnidadeMedida" value="alquere" checked>por Alquere
+        <input type="radio" id="radioHectare" name="radioUnidadeMedida" value="hectare">por Hectare
     </div>
-    <div>
+    <div class="divTempo">
         Tempo do Deslocamento:
         <input type="number" id="tempo" placeholder="segundos">
     </div>
-    <div id="divLinhas">
+    <div class="divLinhas">
         Espaçamento entre linhas: 
-        <input type="radio" name="radioLinhas" value="45cm">45 cm
-        <input type="radio" name="radioLinhas" value="50cm">50 cm
+        <input type="radio" id="45cm" name="radioLinhas" value="45cm" checked>45 cm
+        <input type="radio" id="50cm" name="radioLinhas" value="50cm">50 cm
     </div>
-    <div id="divCalculo">
-        <button type="button" name="botaoCalcular" value="0">Calcular</button>
-        Resultado:
+    <div class="divCalculo">
+        <button type="submit" name="botaoCalcular" onclick="calcular()">Calcular</button>
         <br>
+        <br>
+        Resultado:
         <input type="text" id="resultado" readonly>
     </div>
 </body>

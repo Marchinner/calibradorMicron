@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.divSelecao {
+    margin: 2rem
+}
+
+.divTempo {
+    margin: 2rem;
+}
+
+.divLinhas {
+    margin: 2rem;
+}
+
+.divCalculo {
+    margin: 2rem;
+}

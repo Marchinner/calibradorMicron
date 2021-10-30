@@ -1,28 +1,74 @@
-const alquere = 24200 // m^2
-const hectare = 10000 // m^2
+function calcular() {
 
-let litrosPorAlquere = prompt('Quantos litros por Alquere?')
+    const alquere = 24200 // m^2
+    const hectare = 10000 // m^2
 
-let litrosPorHectare = ((litrosPorAlquere) / (alquere / hectare))
+    // let litrosPorAlquere = prompt('Quantos litros por Alquere?')
 
-console.log(litrosPorHectare)
+    // let litrosPorHectare = ((litrosPorAlquere) / (alquere / hectare))
 
-let tempoMedido = prompt('Qual foi o tempo necessário para o veículo se deslocar 50 m aplicando o produto? (em segundos)')
+    let litros = document.getElementById('litrosCliente').value
+    let tempo = document.getElementById('tempo').value
+    let litrosPorHectare = (litros / (alquere / hectare))
+    let radioLinhas = document.getElementsByName('radioLinhas')
+    let radioUnidade = document.getElementsByName('radioUnidadeMedida')
+    let metrosLineares45 = (hectare / (45 / 100))
+    let metrosLineares50 = (hectare / (50 / 100))
+    let resultado = document.getElementById('resultado')
 
-let espacamentoEntreLinhas = prompt('Qual o espaçamento entre as linhas (em cm)?')
+    if (document.getElementById('radioAlquere').checked) {
+        console.log('Alquere selecionado')
+        if (document.getElementById('45cm').checked) {
+            console.log(metrosLineares45 + ' metros lineares')
+            let litroPorMetroCubico = litrosPorHectare / metrosLineares45
+            console.log(litroPorMetroCubico + ' litros por metro cubico')
+            let mLporMetroQuadrado = litroPorMetroCubico * 50
+            let convertido = mLporMetroQuadrado * 1000
+            document.getElementById('resultado').value = convertido.toFixed(2) + ' mL em ' + tempo + ' segundos.'
+            console.log(convertido)
+        } else {
+            console.log(metrosLineares50)
+            let litroPorMetroCubico = litrosPorHectare / metrosLineares50
+            let mLporMetroQuadrado = litroPorMetroCubico * 50
+            let convertido = mLporMetroQuadrado * 1000
+            document.getElementById('resultado').value = convertido.toFixed(2) + ' mL em ' + tempo + ' segundos.'
+        }
+    } 
+    else {
+        console.log('Hectare selecionado')
+        if (document.getElementById('45cm').checked) {
+            let litroPorMetroCubico = litros / metrosLineares45
+            let mLporMetroQuadrado = litroPorMetroCubico * 50
+            let convertido = mLporMetroQuadrado * 1000
+            document.getElementById('resultado').value = convertido.toFixed(2) + ' mL em ' + tempo + ' segundos.'
+        } else {
+            let litroPorMetroCubico = litros / metrosLineares50
+            let mLporMetroQuadrado = litroPorMetroCubico * 50
+            let convertido = mLporMetroQuadrado * 1000
+            document.getElementById('resultado').value = convertido.toFixed(2) + 'mL em ' + tempo + ' segundos.'
+        }
+    }
+}
 
-let metrosLineares = (hectare / ((espacamentoEntreLinhas) / 100))
+// console.log(litrosPorHectare)
 
-console.log(metrosLineares + 'm')
+// let tempoMedido = prompt('Qual foi o tempo necessário para o veículo se deslocar 50 m aplicando o produto? (em segundos)')
 
-let litroPorMetroCubico = litrosPorHectare / metrosLineares
+// let espacamentoEntreLinhas = prompt('Qual o espaçamento entre as linhas (em cm)?')
 
-console.log(litroPorMetroCubico + 'L/m^3')
+// let metrosLineares = (hectare / ((espacamentoEntreLinhas) / 100))
 
-let mLporMetroQuadrado = litroPorMetroCubico * 50
+// console.log(metrosLineares + 'm')
 
-console.log(mLporMetroQuadrado + 'mL / m^2')
+// let litroPorMetroCubico = litrosPorHectare / metrosLineares
 
-let convertido = mLporMetroQuadrado * 1000
+// console.log(litroPorMetroCubico + 'L/m^3')
 
-alert('Deverá ser coletado ' + convertido.toFixed(2) + ' mL em ' + tempoMedido + ' segundos')
+// let mLporMetroQuadrado = litroPorMetroCubico * 50
+
+// console.log(mLporMetroQuadrado + 'mL / m^2')
+
+// let convertido = mLporMetroQuadrado * 1000
+
+// alert('Deverá ser coletado ' + convertido.toFixed(2) + ' mL em ' + tempoMedido + ' segundos')
+
